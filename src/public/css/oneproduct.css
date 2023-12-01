@@ -1,0 +1,412 @@
+body {
+    background-color: white;
+    width: 100%;
+}
+
+.ocultarContenido {
+    display: none;
+}
+
+#Prod_In {
+    display: inline;
+}
+
+/*------- Slider relacionados ------*/
+
+.itemDataBox a {
+    text-decoration: none;
+    color: #242424;
+}
+
+.sliderContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 964px;
+    position: relative;
+}
+
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+#prev,
+#next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+#prev {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+}
+
+#next {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+#content {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+.item {
+    width: 12em;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: solid #999 1px;
+    border-radius: 8px;
+    box-shadow: rgba(6, 5, 14, 0.15) 0px 48px 100px 0px;
+    background-color: whitesmoke;
+}
+
+.item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.item:hover {
+    box-shadow: 2px 2px 5px white;
+}
+
+.item a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.name_idx {
+    height: 7em;
+}
+
+.item h2 {
+    color: black;
+    font-size: 150%;
+    margin: auto;
+    text-align: center;
+}
+
+.price_idx {
+    font-weight: bolder;
+    font-size: 22px;
+    font-family: 'Barlow', sans-serif;
+    color: black;
+    margin-top: -10px;
+}
+
+.btnItem {
+    text-align: center;
+    margin-top: 5%;
+    list-style: none;
+    height: 50px;
+}
+
+.item img:hover {
+    transition: 1s;
+    transform: scale(1.05);
+}
+
+@media (min-width: 601px) {
+    .contenedorImg {
+        width: 30%;
+        overflow: hidden;
+        position: relative;
+        box-sizing: inherit;
+    }
+
+    .contenedorImg img {
+        width: 100%;
+        display: block;
+        position: absolute;
+    }
+
+    .contenedorImg:hover {
+        cursor: pointer;
+    }
+
+    .contenedor {
+        overflow: hidden;
+    }
+
+    #productBox {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .contendor-Product {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .productData {
+        width: 50%;
+        padding-left: 10px;
+    }
+
+    .productData ul {
+        width: 60%;
+    }
+
+    .productData h1 {
+        font-size: 2em;
+        color: black;
+        font-family: 'Passion One', cursive;
+    }
+
+    #priceProduct {
+        font-weight: bolder;
+        font-size: 25px;
+        font-family: 'Barlow', sans-serif;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #recomendadosMobile {
+        padding-top: 10px;
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .swiper-slide {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .swiper-button-next {
+        right: 2px !important;
+    }
+
+    .swiper-button-prev {
+        left: 2px !important;
+    }
+
+
+    .card-4 {
+        position: relative;
+        font-size: 18px;
+        background: whitesmoke;
+        border-radius: 15px;
+        text-align: start;
+        box-shadow: rgba(6, 5, 14, 0.15) 0px 48px 100px 0px;
+        margin-top: 2px;
+        width: 30%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .card-4:hover {
+        box-shadow: 2px 2px 5px white;
+        transition: 1s;
+        transform: scale(1.05);
+    }
+
+    .card-4 a {
+        text-decoration: none;
+    }
+
+    .card-4 img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .card-4 .card-description {
+        padding: 1rem 1rem;
+    }
+
+    .card-4 .card-title-Sw {
+        font-weight: bolder;
+        text-align: center;
+        color: black;
+        font-size: 20px;
+        height: 85px;
+    }
+
+    .price_Sw {
+        font-weight: bolder;
+        font-size: 22px;
+        font-family: 'Barlow', sans-serif;
+        color: black;
+        margin-top: -10px;
+    }
+
+    .btnSw {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: inherit;
+        margin-top: 5px;
+        height: 55px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .swiper-button-next:after {
+        display: none;
+    }
+
+    .swiper-button-prev:after {
+        display: none;
+    }
+
+    .contenedorImg {
+        width: 70%;
+        overflow: hidden;
+        position: relative;
+        box-sizing: inherit;
+        margin: auto;
+    }
+
+    .contenedorImg img {
+        width: 100%;
+        display: block;
+        position: absolute;
+    }
+
+    .card-4 {
+        position: relative;
+        font-size: 18px;
+        background: whitesmoke;
+        border-radius: 15px;
+        text-align: start;
+        box-shadow: rgba(6, 5, 14, 0.15) 0px 48px 100px 0px;
+        margin-top: 2px;
+        width: 30%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .card-4:hover {
+        box-shadow: 2px 2px 5px white;
+        transition: 1s;
+        transform: scale(1.05);
+    }
+
+    .card-4 a {
+        text-decoration: none;
+    }
+
+    .card-4 img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .priceProduct {
+        font-weight: bolder;
+        font-size: 22px;
+        font-family: 'Barlow', sans-serif;
+        color: black;
+        margin-top: -10px;
+        text-align: center;
+    }
+
+    .card-4 .card-description {
+        padding: 1rem 1rem;
+    }
+
+    .card-4 .card-title-Sw {
+        font-weight: bolder;
+        text-align: center;
+        color: black;
+        font-size: 20px;
+        height: 85px;
+    }
+
+    .price_Sw {
+        font-weight: bolder;
+        font-size: 22px;
+        font-family: 'Barlow', sans-serif;
+        color: black;
+        margin-top: -10px;
+    }
+
+    .btnSw {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: inherit;
+        margin-top: 5px;
+        height: 55px;
+    }
+
+    .card-4 {
+        width: 100%;
+    }
+
+
+    .swiper-slide {
+        margin-left: 0px;
+    }
+
+    .card-4 .card-title-Sw {
+        height: 95px;
+    }
+
+    .productData {
+        width: 100%;
+    }
+
+    .productData ul {
+        width: 100%;
+    }
+
+
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artezzo - Desde 1948</title>
+    <link rel="shortcut icon" href="/img/llogo.png">
+    <%- include('partials/head.html')%>
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+    <%- include('partials/navigation.html')%>
+    <section class="contenedor">
+       
+        <%- include('partials/barra.html')%>
+        <h1 id="categoryBox"></h1>
+        <button id="btnCleanSearch" class="btn btn-info ocultarBtn" onclick="showProducts()">Volver</button>
+        <section id="productsBox">
+
+        </section>
+        <%- include('partials/footer.html')%>
+        <a href="https://api.whatsapp.com/send?phone=++59895042296text=Hola, Necesito más información!"
+            class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+    </section>
+</body>
+
+</html>

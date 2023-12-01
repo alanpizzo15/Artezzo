@@ -1,0 +1,127 @@
+<header class="navbar-expand-lg navbar-light">
+    <div class="nav-container1">
+
+        <div class="navbarra">
+            <div class="nav-container2">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+
+                <div class="menu-items">
+                    <div class="Categorias" id="listaCategorias">
+                        <li><a href='/categorias/quesos'>QUESOS</a></li>
+                        <li><a href='/categorias/dulces'>DULCES</a></li>
+                        <li><a href='/categorias/frutos-secos'>FRUTOS SECOS Y SEMILLAS</a></li>
+                        <li><a href='/categorias/condimentos'>CONDIMENTOS</a></li>
+                        <li><a href='/categorias/almacen'>ALMACÉN</a></li>
+                        <li><a href='/categorias/panaderia'>PANADERÍA</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="logoBox">
+            <a class="navbar-brand" href="/" id="logonav">
+                <img src="/img/artezzo.png">
+            </a>
+        </div>
+
+        <div class="iconos">
+
+            <form id="busqueda">
+                <div class="search-box">
+                    <input class="search-input" id="buscador" autocomplete="off" type="text"
+                        placeholder="Busca en la canasta...">
+                    <a href="#" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+
+                <div class="searchListBox">
+                    <ul>
+                        <scroll-container id="searchList">
+
+                        </scroll-container>
+                    </ul>
+                </div>
+            </form>
+
+            <div class="redes">
+                <a href="" class="brandico-mail aBrands">
+                    <i class="fa-regular fa-envelope" style="color: #fffF; margin-top: 30%; font-size: 15px;"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100093635806918"
+                    class="brandico-facebook aBrands">
+                    <i class="fa-brands fa-facebook-f" style="color: #fffF; margin-top: 30%; font-size: 15px;"></i>
+                </a>
+                <a href="https://instagram.com/artezzo_uy?igshid=MWQ1ZGUxMzBkMA==" class="brandico-instagram aBrands">
+                    <i class="fa-brands fa-instagram" style="color: #fffF; margin-top: 30%; font-size: 15px;"></i>
+                </a>
+            </div>
+
+            <button class="carrito" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" style="border: none; background-color: rgba(240, 248, 255, 0);">
+                <div id="contador" class="circulo"></div>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+<!-------------------Carrito desplegable---------------->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="fa-solid fa-basket-shopping"></i> Mi Canasta
+        </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div id="itemsBox">
+
+        </div>
+        <div id="totalBox"></div>
+        <div class="modal-footer">
+            <button onclick="clearCart()" type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="butt_car">
+                Vaciar carrito
+            </button>
+
+            <button type="button" class="btn btn-dark" id="buyBtn" onclick="showContactform()">Comprar</button>
+        </div>
+        <form id="contactForm" class="contactFormHidden">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control">
+
+            <label for="telefono">Telefono</label>
+            <input type="phone" id="telefono" class="form-control">
+
+            <label for="localidad">Localidad</label>
+            <select name="location" id="localidad" class="form-control" required>
+                <option>Montevideo</option>
+                <option>Ciudad de la Costa</option>
+            </select>
+
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" class="form-control" required>
+
+            <label for="termsReaded">Leyó los <a href="/terminos" class="tycRef">términos y condiciones?</a></label>
+            <input type="checkbox" name="terminosycondiciones" id="termsReaded" required onchange="tycChecked()">
+            <button type="submit" id="sendOrderBtn" class="btn-danger" onclick="sendOrder(), clearCart(), !alert('Se envió su orden correctamente. Nos estaremos comunicando con usted a la brevedad.')" disabled>Enviar
+                pedido</button>
+        </form>
+    </div>
+</div>
+
+
+<!--------------- Spinner ----------------->
+
+<div id="loaderContainer">
+    <div class="preloader"></div>
+    <img src="/img/llogo.png" class="spinnerImg">
+</div>

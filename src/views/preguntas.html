@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artezzo - Desde 1948</title>
+    <link rel="shortcut icon" href="/img/llogo.png">
+    <%- include('partials/head.html')%>
+        <link rel="stylesheet" href="/css/index.css">
+</head>
+<style>
+    #titleTerminos{
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+.subMenu h6{
+    font-size: 25px;
+    margin-left: 10%;
+}
+
+.subMenu li{
+    font-size: 20px;
+    margin-left: 13%;
+    margin-right: 30%;
+}
+</style>
+<body>
+    <%- include('partials/navigation.html')%>
+    <section class="contenedor">
+        
+            <%- include('partials/barra.html')%>
+
+
+                <h1 id="titleTerminos">Preguntas frecuentes de nuestros clientes:</h1>
+                <hr style="padding: 1px; color: black;">
+
+                <ul class="subMenu">
+                    <h6>Como se puede comprar en la página</h6>
+                    <li> Nuestro sitio web emplea la información con el fin de
+                        proporcionar el mejor servicio posible, en pedidos en caso que aplique, y mejorar
+                        nuestros productos y servicios. El Usuario podrá navegar por las Categorías y cliquear
+                        los productos que se encuentran exhibidos en pantalla, agregarlos a su Canasta e indicar
+                        respecto de cada ítem la cantidad que desea comprar. El procedimiento del Sitio le da la
+                        oportunidad de añadir o quitar ítems del pedido,
+                        de anularla por completo y de revisarla. Pueden existir mínimos o máximos en la
+                        cantidad, la disponibilidad de los productos ofrecidos por <b>ARTEZZO</b> está sujeta al movimiento
+                        diario de stock de donde se prepara el pedido realizado.
+                        Además las cantidades de los cortes de los quesos y dulces son aproximadas, intentando siempre que sean 
+                        lo más exactos posibles e intentar brindarles a nuestros clientes una buena experiencia de compra. </li>
+                </ul>
+                
+                <ul class="subMenu">
+
+                    <h6>Tienen Local?</h6>
+
+                    <li>Por el momento tenemos puesto de feria los días Miércoles (Pilcomayo y Gallinal), Jueves (Juan Cabal y Montes Casero),
+                        Viernes (Decroly y Amazonas), Sábados (Canelones y Soriano).
+                    </li>
+                </ul>
+
+                <ul class="subMenu">
+                    <h6>Hay contaminacion cruzada?</h6>
+
+                    <li>No, tenemos diferentes tipos de cuchillas y cucharas para cortar o envasar los productos. </li>
+                </ul>
+
+           
+                <ul class="subMenu">
+                    <h6>Cuanto tiempo demora en llegar mi pedido?</h6>
+
+                    <li>Entre 48 y 72hs después de haber realizado el pedido, dependiendo de la zona en la que el cliente se encuentre. </li>
+                </ul>
+
+                <ul class="subMenu">
+                    <h6>Como puedo abonar mi pedido?</h6>
+
+                    <li>Efectivo, tarjetas de débito, tarjetas de crédito, mercado pago o transferencia bancaria. </li>
+                </ul>
+
+                <ul class="subMenu">
+                    <h6>Hay algún cargo extra por abonar con tarjetas?</h6>
+
+                    <li>No, el único cargo extra que se puede llegar a aplicar es si el pedido no llega al total de $700. En ese caso se agrega $100 por cargos de envíos. </li>
+                </ul>
+
+                <ul class="subMenu">
+                    <h6>Hacen envíos al interior?</h6>
+
+                    <li>Por el momento no. </li>
+                </ul>
+
+                <div class="indexContent">
+                    <a href="https://api.whatsapp.com/send?phone=++59894552809text=Hola, Nececito más información!"
+                        class="float" target="_blank">
+                        <i class="fa fa-whatsapp my-float"></i>
+                    </a>
+
+                </div>
+
+                <%- include('partials/footer.html')%>
+    </section>
+    <script src="/scripts.js"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

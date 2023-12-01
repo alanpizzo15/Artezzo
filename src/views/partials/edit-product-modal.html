@@ -1,0 +1,86 @@
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title" id="exampleModalLabel">Editar producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <span id="productId"></span>
+            </div>
+            <div class="modal-body">
+                <form class="form-group">
+                    <div class="d-flex flex-row flex-nowrap justify-content-around align-items-center">
+                        <span class="text-muted" id="idProdBox" style="display: none;"></span>
+                        <label class="form-check-label" for="editDestacado">Destacado</label>
+                        <input class="form-check-input" type="checkbox" id="editDestacado" name="destacado">
+                        <label class="form-check-label" for="editPorPorcion">Producto por porción</label>
+                        <input class="form-check-input" type="checkbox" id="editPorPorcion" name="destacado">
+                    </div>
+                    <div class="mb-3">
+                        <div id="" class="form-text">Nuevo nombre del producto.</div>
+                        <input type="text" class="form-control" name="name" id="newname" aria-describedby="">
+                    </div>
+                    <div class="mb-3">
+                        <div id="" class="form-text">Nueva categoría del producto.</div>
+
+                        <div class="selectBox d-flex flex-row flex-nowrap justify-content-between">
+                            <div class="form-group col-4">
+                                <label for="Categoria" class="text-muted">Categoria</label>
+                                <select name="Categoria" id="categoriaEdit" data-placeholder="- Seleccione Categoria -" class="form-control" onchange="addCategories('edit')" value="">
+                                    <option value=""></option>
+                                    <option value="Quesos">Quesos</option>
+                                    <option value="Frutos Secos">Frutos Secos</option>
+                                    <option value="Condimentos">Condimentos</option>
+                                    <option value="Dulces">Dulces</option>
+                                    <option value="Almacen">Almacen</option>
+                                    <option value="Panaderia">Panaderia</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="Subcategoria" class="text-muted">Subcategoria</label>
+                                <select id="subCatListE" name="Subcategoria" data-placeholder="- Seleccione subcategoria -" class="form-control" value="">
+                    <option value=""></option>
+                  </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex flex-row flex-nowrap" style="justify-content: space-between;">
+                        <div class="mb-3 col-3">
+                            <div id="" class="form-text">Nuevo precio del producto.</div>
+                            <input style="width: 80px;" type="number" class="form-control" name="price" id="newprice" aria-describedby="">
+                        </div>
+                        <div class="mb-3 col-3">
+                            <div id="" class="form-text">Precio de OFERTA del producto.</div>
+                            <input style="width: 80px;" type="number" class="form-control" name="offerPrice" id="offerPrice" aria-describedby="">
+                        </div>
+                        <div class="mb-3 col-3">
+                            <label class="form-check-label" for="newstock">Marcar si NO hay stock</label>
+                            <input class="form-check-input" type="checkbox" id="nostock" name="stock">
+                        </div>
+                    </div>
+                    <div class="porcionesBox">
+                        <div id="" class="form-text">Porción 1.</div>
+                        <input style="width: 85px;" type="number" class="form-control" name="porcion1" id="newPorcion1" aria-describedby="" NPplaceholder="Gramos.">
+                        <div id="" class="form-text">Porción 2.</div>
+                        <input style="width: 85px;" type="number" class="form-control" name="porcion2" id="newPorcion2" aria-describedby="" placeholder="Gramos.">
+                        <div id="" class="form-text">Porción 3.</div>
+                        <input style="width: 85px;" type="number" class="form-control" name="porcion3" id="newPorcion3" aria-describedby="" placeholder="Gramos.">
+                    </div>
+                    <div class="mb-3">
+                        <div id="" class="form-text">Nueva escripción del producto.</div>
+                        <textarea class="form-control" name="description" id="newdesc" cols="30" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <div id="" class="form-text">Nueva imagen del producto.</div>
+                        <input type="file" name="image" id="newimage">
+                    </div>
+                    <span></span>
+                    <div class="btnBox">
+                        <button id="editProductBtn" class="btn btn-primary">Editar producto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

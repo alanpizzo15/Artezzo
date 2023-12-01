@@ -1,0 +1,185 @@
+footer {
+    z-index: 1;
+    background-color: whitesmoke;
+    color:#897207;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+}
+
+.imgBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menuItems a {
+    text-decoration: none;
+    color: #897207;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+
+.footer-basic li {
+    padding:0 10px;
+}
+
+.footer-basic ul a {
+    text-decoration:none;
+    opacity:0.8;
+    text-decoration: none;
+    color: #897207;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.footer-basic a:hover {
+    color: black;
+}
+
+.footer-basic i:hover{
+    color: black;
+}
+
+.social {
+    width: 100%;
+    text-align:center;
+    padding-bottom:25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+    opacity:0.9;
+}
+
+.box_copyright{
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+    padding-bottom: 5px;
+}
+
+.box_copyright p{
+    margin-top: 40px;
+    color: #7a7a7a;
+    position: relative;
+}
+
+.box_copyright a {
+    text-decoration: none;
+    color: #7a7a7a;
+    font-weight: bolder;
+}
+
+.box_copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+/* WHATS APP */
+
+.float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 40px;
+    left: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 10;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #199245e8;
+    transition: 1.5s;
+}
+
+.my-float {
+    margin-top: 11px;
+}
+
+.list-inline {
+    width: 100%;
+}
+
+@media (max-width: 480px){
+    .box__footer{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .bg_color{
+        width: 100%;
+        height: 55%;
+        background: #2196f3;
+    }
+
+    .box__footer a{
+        color: #000B41;
+    }
+
+   
+}
+
+@media (max-width: 600px) {
+
+    #iconFoot{
+        width: 60%;
+        position: relative;
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 601px) {
+
+    #iconFoot{
+        width: 25%;
+        position: relative;
+        margin: auto;
+    }
+
+}
