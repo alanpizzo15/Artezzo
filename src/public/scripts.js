@@ -22,7 +22,7 @@ function showProducts(products) {
             <li class="list-group-item d-flex flex-nowrap justify-content-around align-items-center price_idx">$ ${item.price}</li>
             </a>
             <li class="flex-row flex-nowrap btnItem">
-              <a href="/product/${item._id}" class="btn btn-dark" type="button">Ver opciones</a>
+              <a href="/product/${item._id}" class="btn btn-dark btnInx" type="button">Ver opciones</a>
             </li>
           </ul>
         </div>

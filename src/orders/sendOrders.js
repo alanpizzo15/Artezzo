@@ -30,8 +30,8 @@ router.post('/sendorder', async (req, res)=> {
         <p>Precio: ${item.price}</p>
         <p>Peso: ${item.porcion}</p>
         <p>Cantidad: ${item.quantity}</p>
-
         `
+        
     });
 
     console.log(productsHtml);
@@ -50,7 +50,7 @@ router.post('/sendorder', async (req, res)=> {
                 <hr>
                 <h3>Total: $ ${Total}</h3>
                 `
-                
+
     };
 
     const transport = nodemailer.createTransport(config);

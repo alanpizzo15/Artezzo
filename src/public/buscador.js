@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const searchListBox = document.getElementById('searchList');
     const products = await (await fetch('/api/getproducts')).json();
     funcionBuscar(products, searchListBox);
-    document.getElementById('btnCleanSearch').setAttribute('style', 'display: none;');
 });
 
 function quitarTildes(cadena){
@@ -43,5 +42,22 @@ function funcionBuscar(products, searchListBox){
     })
 };
 
+//Ocultar search input.
+
+const buscadorElmt = document.getElementById('buscador');
+const lupaElmt = document.getElementById('lupaBtn');
+const contenedorElmt = document.getElementById('container');
+
+buscadorElmt.classList.add('noDisplay');
+
+lupaElmt.addEventListener('click', () =>{
+    buscadorElmt.classList.toggle('noDisplay');
+    buscadorElmt.classList.add('search-input');
+});
+
+contenedorElmt.addEventListener('click', ()=> {
+    console.log('click contenedor');
+    buscadorElmt.classList.add('noDisplay');
+});
 
 

@@ -1,7 +1,12 @@
 window.addEventListener("load", (evt)=> {
     showCartItems();
     loader();
+    window.matchMedia('(max-width: 600px)').matches === true ? document.querySelector('.redes').classList.add('noDisplay') : console.log('Vista de escritorio.');
+    window.matchMedia('(min-width: 601px)').matches === true ? document.querySelector('.hamburger').classList.add('noDisplay') : console.log('Vista de escritorio.');
+    window.matchMedia('(min-width: 601px)').matches === true ? document.querySelector('.menu').classList.add('noDisplay') : console.log('Vista de escritorio.');
+    window.matchMedia('(min-width: 601px)').matches === true ? document.querySelector('.toggler').classList.add('noDisplay') : console.log('Vista de escritorio.');
 });
+
 
 async function añadirAlCarrito(prodId) {
     const product = await (await fetch('/api/getproducts/' + prodId)).json();
@@ -35,21 +40,39 @@ async function añadirAlCarrito(prodId) {
 
     if(product.porciones !== true){
         if(isStoredItem === null){
+            Swal.fire({
+                icon: 'success',
+                title: 'Este producto se añadio correctamente a la Canasta :)',
+                showConfirmButton: false,
+                timer: 1500
+              })
             cartItem.id = `${prodId}`
             sessionStorage.setItem(`${prodId}`, JSON.stringify(cartItem));
         } else {
-            //!alert("Este producto ya se encuentra en el carrito.");
             Swal.fire({
                 icon: 'error',
-                title: 'Este producto ya se encuentra en el carrito'
-            })
+                title: 'Este producto ya se encuentra en la Canasta',
+                text: 'Si quiere agregar más cantidad, por favor dirijase hacia a la Canasta. Gracias!',
+              })
         };
     } else {
         if(isStoredItem !== null){
             var x = findItems(prodId);
+            Swal.fire({
+                icon: 'success',
+                title: 'Este producto se añadio correctamente a la Canasta :)',
+                showConfirmButton: false,
+                timer: 1500
+              })
             cartItem.id = `${prodId}-${x}`
             sessionStorage.setItem(`${prodId}-${x}`, JSON.stringify(cartItem));
         } else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Este producto se añadio correctamente a la Canasta :)',
+                showConfirmButton: false,
+                timer: 1500
+              })
             cartItem.id = `${prodId}`
             sessionStorage.setItem(`${prodId}`, JSON.stringify(cartItem));
         }
@@ -74,7 +97,7 @@ function showCartItems(){
             <div class="itemCartDataBox">
                 <p>${item.name}</p>
                 <p>${item.porcion} grs.</p>
-                <p>$ ${item.price}</p>
+                <p id='priceUnit${item.id}'>$ ${item.price}</p>
                 <input id="${item.id}" type="number" min="1" value="${item.quantity}" onchange="changeItemQty('${item.id}')"/>                    
             </div>
             <i class="fa-solid fa-trash-can buttCart" style="color: red;"  type="button" onclick="deleteItemCart('${item.id}')"></i>
@@ -88,7 +111,7 @@ function showCartItems(){
                 <p>${item.name}</p>
                 <input class="inPut" id="${item.id}" type="number" min="1" value="${item.quantity}" onchange="changeItemQty('${item.id}')"/>             
             </div>
-            <p class="priceCart">$${item.price}</p>
+            <p id='priceUnit${item.id}' class="priceCart">$ ${item.price}</p>
                 <i class="fa-solid fa-trash-can buttCart" style="color: red;"  type="button" onclick="deleteItemCart('${item.id}')"></i>
             </div>
             `
@@ -116,16 +139,27 @@ function changeItemQty(ProdId){
 
     sessionStorage.setItem(`${ProdId}`, JSON.stringify(itemFind));
 
-    showTotal();
+    showTotal(ProdId);
 };
 
 function deleteItemCart(ProdId){
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Haz eliminado un producto de la Canasta :(',
+      })
     sessionStorage.removeItem(`${ProdId}`);
     showCartItems();
 };
 
-function showTotal(){
+function showTotal(prodId){
     const totalBox = document.getElementById("totalBox");
+    const priceUnitBox = document.getElementById(`priceUnit${prodId}`);
+    const itemFind = JSON.parse(sessionStorage.getItem(`${prodId}`));
+
+    let subTotal = 0;
+
+    itemFind !== null ? (subTotal = (Number(itemFind.quantity) * itemFind.price), priceUnitBox.innerHTML =  `$ ${subTotal}`, console.log('entro aca')): console.log('0 items en el carrito.');
 
     let Total = 0;
     for(var i = 0, len = sessionStorage.length; i < len; ++i){
@@ -171,6 +205,13 @@ function findItems(itemId) {
 //|| (!query && typeof i === 'string')
 
 function sendOrder(){
+    Swal.fire({
+        icon: 'success',
+        title: 'Se envió su orden correctamente. Nos estaremos comunicando con usted a la brevedad.',
+        showConfirmButton: false,
+        timer: 5000
+    });
+
     const orderData = [];
     const itemsData = [];
     
@@ -187,15 +228,14 @@ function sendOrder(){
 
     for(var i = 0, len = sessionStorage.length; i < len; ++i){
         let item = JSON.parse(sessionStorage.getItem( sessionStorage.key( i )));
-
         itemsData.push(item);
     };
 
     orderData.push(clientData);
     orderData.push(itemsData);
 
-    
-    if(name !== "" && phone !== "" && location !== "" && address !== ""){   
+    if(name !== "" && phone !== "" && location !== "" && address !== ""){  
+
         fetch('/sendorder', {
                 method: "POST",
                 mode: "cors",
@@ -207,22 +247,10 @@ function sendOrder(){
             
                 body: JSON.stringify(orderData), 
         });
-
-        orderSended();
+        clearCart()
+        setInterval("location.reload()", 5000);
     };
-};
-
-function orderSended(){
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Se envió su orden correctamente. Nos estaremos comunicando con usted a la brevedad.',
-        showConfirmButton: false,
-        timer: 4000
-    });
-    
-    setInterval("location.reload()", 4500);
-}
+};  
 
 //---------------- Spinner --------------------------
 

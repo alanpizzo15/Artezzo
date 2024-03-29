@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url(/img/bg1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://www.gastrolabweb.com/u/fotografias/m/2021/5/13/f768x400-13188_57091_3743.jpg);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -26,6 +26,7 @@ body {
 
     .subCatBar{
         text-align: center;
+        margin-top: 60px;
     }
   
     .subCatList{
@@ -34,7 +35,7 @@ body {
 
     .subCatList .aSubList {
         text-decoration: none;
-        color: black;
+        color: whitesmoke;
         font-size: 20px;
         float: left;
         margin-right: 5%;
@@ -54,7 +55,7 @@ body {
     }
 
     .card-1 {
-        width: 8em;
+        width: 8.5em;
         height: auto;
         overflow: hidden;
         margin: 20px;
@@ -62,11 +63,12 @@ body {
         background-color: white;
         border: solid #999 1px;
         border-radius: 8px; 
+        box-shadow: 1px 1px 1px 1px rgba(32,32,32,0.3);
     }
 
     .card-1 ul a{
         text-decoration: none;
-        color: black;
+        
     }
 
     .namePro{
@@ -103,6 +105,7 @@ body {
   
 
     .titleCategory{
+        color: whitesmoke;
         float: left;
         margin-left: 3%;
         margin-top: 2%;
@@ -129,7 +132,7 @@ body {
 
     .subCatList .aSubList {
         text-decoration: none;
-        color: black;
+        color: whitesmoke;
         font-size: 24px;
     }
 

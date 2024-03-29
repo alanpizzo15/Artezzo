@@ -8,9 +8,10 @@
 body {
     width: 100%;
     height: 100vh;
-    background-image: url(/img/fondoIndex.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.gastroactitud.com/wp-content/uploads/2022/04/galmesan-5-1.jpg);
     background-attachment: fixed;
     background-size: cover;
+    
 }
 
 .contenedor {
@@ -23,9 +24,6 @@ body {
     z-index: 1;
 }
 
-video {
-    z-index: 1;
-}
 
 .indexContent {
     position: relative;
@@ -117,15 +115,20 @@ video {
 /*---------------------- CSS Aplicado a pantallas desde 601px de ancho------------- */
 
 @media (min-width: 601px) {
-    .miniS {
+  
+
+    .miniSlider {       
+        text-align: center;
+        background-color: whitesmoke;
+    }
+
+    .miniS{
         width: 50%;
         height: 50%;
     }
-
-    .miniSlider {
-        margin-top: -16px;
+    
+    .miniSlider{
         text-align: center;
-        background-color: whitesmoke;
     }
 
     h4 {
@@ -133,7 +136,8 @@ video {
         text-align: center;
         font-size: 300%;
         font-family: 'Lucida Sans';
-        color: black;
+        color: whitesmoke;
+        -webkit-text-stroke: black 0.5px;
     }
 
     .cards {
@@ -177,6 +181,7 @@ video {
 
     .quesosImg {
         margin-top: 3%;
+        margin-bottom: 5%;
         text-align: center;
     }
 
@@ -190,13 +195,42 @@ video {
         width: 40%;
     }
 
-    #frase {
-        text-align: center;
-        margin-top: 3%;
-        font-size: 300%;
-        font-style: oblique;
-        font-weight: 800;
+    .cnt{
+        margin-top: 20%;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
     }
+
+    .info-cnt{
+        text-align: center;
+        width: 20%;
+    }
+
+    .info-cnt p{
+        color: whitesmoke;
+        font-weight: 600;
+        font-family: 'Barlow', sans-serif;
+    }
+
+    .info-cnt .num{
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .info-cnt .tit{
+        font-size: 18px;
+    }
+
+    .info-cnt .txt{
+        font-size: 14px;
+    }
+
 
     .item {
         width: 12em;
@@ -267,15 +301,20 @@ video {
 /*-------------------- CSS Aplicado a pantallas de hasta 600px de ancho---------------*/
 
 @media (max-width: 600px) {
-    .miniS {
-        width: 100%;
-        height: 50%;
-    }
+  
 
     .miniSlider {
-        margin-top: -10px;
         text-align: center;
         background-color: whitesmoke;
+    }
+
+    .miniS{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .miniSlider{
+        text-align: center;
     }
 
     #quesos {
@@ -289,6 +328,8 @@ video {
     h4 {
         margin-top: 10px;
         text-align: center;
+        color: whitesmoke;
+        -webkit-text-stroke: black 0.5px;
     }
 
     .especialesypacks {
@@ -301,11 +342,13 @@ video {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        box-shadow: 1px 1px 1px 1px rgba(32,32,32,0.3);
     }
 
     .cards .card {
         width: 30%;
         margin-bottom: 5px;
+        box-shadow: 1px 1px 1px 1px rgba(32,32,32,0.3);
     }
 
     .cards .card img {
@@ -336,11 +379,13 @@ video {
 
     .queso1 {
         width: 80%;
+        box-shadow: 3px 3px 3px 3px rgba(32,32,32,0.3);
     }
 
     .queso2 {
         width: 80%;
         margin-top: 5%;
+        box-shadow: 3px 3px 3px 3px rgba(32,32,32,0.3);
     }
 
     #frase {
@@ -349,6 +394,8 @@ video {
         font-size: 170%;
         font-style: oblique;
         font-weight: 800;
+        color: whitesmoke;
+        -webkit-text-stroke: black 0.5px;
     }
 
     .item {
@@ -361,7 +408,7 @@ video {
         flex-wrap: wrap;
         border: solid #999 1px;
         border-radius: 8px;
-        box-shadow: rgba(6, 5, 14, 0.15) 0px 48px 100px 0px;
+        box-shadow: 1px 1px 1px 1px rgba(32,32,32,0.3);
         background-color: whitesmoke;
     }
 
@@ -380,7 +427,6 @@ video {
 
     .item a {
         text-decoration: none;
-        color: black;
     }
 
     .name_idx {
@@ -411,6 +457,45 @@ video {
 
     .btnInx{
         font-size: 14px;
+    }
+
+    #pgHome{
+        margin-top: 50px;
+    }
+    .cnt{
+        background-color: black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        
+    }
+
+    .info-cnt{
+        text-align: center;
+        width: 30%;
+
+    }
+
+    .info-cnt p{
+        color: whitesmoke;
+        font-weight: 600;
+        font-family: 'Barlow', sans-serif;
+    }
+
+    .info-cnt .num{
+        font-size: 30px;
+        line-height: 60px;
+    }
+
+    .info-cnt .tit{
+        font-size: 14px;
+    }
+
+    .info-cnt .txt{
+        font-size: 12px;
     }
 
 }

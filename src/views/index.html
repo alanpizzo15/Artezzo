@@ -8,9 +8,10 @@
     <title>Artezzo - Desde 1948</title>
     <link rel="shortcut icon" href="/img/llogo.png">
     <meta name="description"
-        content="Tienda de productos de Granja, Quesos, Frutos secos, Condimentos, Pan, Mermeladas, Dulce de Leche, Membrillo.">
+        content="Tienda de productos de Granja, Quesos, Frutos secos, Condimentos, Panificados, Mermeladas, Dulce de Leche, Membrillo.">
     <%- include('partials/head.html')%>
         <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/slider.css">
         <!--SWIPER CDN-->
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
@@ -19,11 +20,12 @@
 
 <body>
     <%- include('partials/navigation.html')%>
-    <section class="contenedor">
+ 
+    <section class="contenedor" id="container" >
 
-        
             <%- include('partials/barra.html')%>
-                <video src="/img/quesos.mp4" loop="True" autoplay muted width="100%" id="quesos"></video>
+
+            <%- include('partials/slider.html')%>
 
                 <div id="carouselExampleCaptions" class="carousel slide carousel-fade miniSlider" data-bs-interval="5000" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -38,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-
+       
                 <h4>Destacados del Mes</h4>
                 <%- include('partials/homeSlider.html')%>
 
@@ -129,11 +131,38 @@
                         <img src="/img/quesos2.jpg" class="queso2">
                     </div>
 
-                    <p id="frase">Los mejores productos de Granja en tú Hogar</p>
+                    <div class="cnt" id="pgHome">
+                        <div class="info-cnt">
+                            <p class="num">4</p>
+                            <p class="tit">Generaciones</p>
+                            <p class="txt">Trabajando en el rubro</p>
+                        </div>
+                        <div class="info-cnt">
+                            <p class="num">+ 20</p>
+                            <p class="tit">Productores</p>
+                            <p class="txt">artesanales del país</p>
+                        </div>
+                        <div class="info-cnt">
+                            <p class="num">+ 76</p>
+                            <p class="tit">Años</p>
+                            <p class="txt">de Experiencia </p>
+                        </div>
+                        <div class="info-cnt">
+                            <p class="num">+ 2300</p>
+                            <p class="tit">Clientes</p>
+                            <p class="txt">Satisfechos </p>
+                        </div>
+                       
+                        <div class="info-cnt">
+                            <p class="num">+ 25000</p>
+                            <p class="tit">Pedidos</p>
+                            <p class="txt">en el año</p>
+                        </div>
+                    </div>
 
 
                     <div class="indexContent">
-                        <a href="https://api.whatsapp.com/send?phone=++59894552809text=Hola, Nececito más información!"
+                        <a href="https://api.whatsapp.com/send?phone=++59895608177text=Hola, Nececito más información!"
                             class="float" target="_blank">
                             <i class="fa fa-whatsapp my-float"></i>
                         </a>
@@ -143,6 +172,7 @@
                     <%- include('partials/footer.html')%>
     </section>
     <script src="/scripts.js"></script>
+    <script src="/buscador.js"></script>
 </body>
 
 </html>

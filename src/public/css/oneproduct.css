@@ -171,6 +171,7 @@ body {
     }
 
     .contendor-Product {
+        margin-top: 81px;
         padding-top: 30px;
         padding-bottom: 30px;
         display: flex;
@@ -301,6 +302,10 @@ body {
 
     .swiper-button-prev:after {
         display: none;
+    }
+
+    .contendor-Product {
+        margin-top: 81px;
     }
 
     .contenedorImg {

@@ -14,28 +14,31 @@
     #titleTerminos{
     margin-top: 2%;
     margin-left: 10%;
+    color: whitesmoke;
 }
 
 .subMenu h6{
     font-size: 25px;
     margin-left: 10%;
+    color: whitesmoke;
 }
 
 .subMenu li{
     font-size: 20px;
     margin-left: 13%;
     margin-right: 30%;
+    color: whitesmoke;
 }
 </style>
 <body>
     <%- include('partials/navigation.html')%>
-    <section class="contenedor">
+    <section class="contenedor" id="container" >
         
             <%- include('partials/barra.html')%>
 
 
                 <h1 id="titleTerminos">Preguntas frecuentes de nuestros clientes:</h1>
-                <hr style="padding: 1px; color: black;">
+                <hr style="padding: 1px; color: whitesmoke">
 
                 <ul class="subMenu">
                     <h6>Como se puede comprar en la página</h6>
@@ -93,7 +96,7 @@
                 </ul>
 
                 <div class="indexContent">
-                    <a href="https://api.whatsapp.com/send?phone=++59894552809text=Hola, Nececito más información!"
+                    <a href="https://api.whatsapp.com/send?phone=++59895608177text=Hola, Nececito más información!"
                         class="float" target="_blank">
                         <i class="fa fa-whatsapp my-float"></i>
                     </a>
@@ -104,6 +107,7 @@
     </section>
     <script src="/scripts.js"></script>
     <script src="/index.js"></script>
+    <script src="/buscador.js"></script>
 </body>
 
 </html>

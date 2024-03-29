@@ -1,25 +1,18 @@
 <header class="navbar-expand-lg navbar-light">
     <div class="nav-container1">
 
-        <div class="navbarra">
-            <div class="nav-container2">
-                <input class="checkbox" type="checkbox" name="" id="" />
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div>
-
-                <div class="menu-items">
-                    <div class="Categorias" id="listaCategorias">
-                        <li><a href='/categorias/quesos'>QUESOS</a></li>
-                        <li><a href='/categorias/dulces'>DULCES</a></li>
-                        <li><a href='/categorias/frutos-secos'>FRUTOS SECOS Y SEMILLAS</a></li>
-                        <li><a href='/categorias/condimentos'>CONDIMENTOS</a></li>
-                        <li><a href='/categorias/almacen'>ALMACÉN</a></li>
-                        <li><a href='/categorias/panaderia'>PANADERÍA</a></li>
-                    </div>
-                </div>
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+            <div>
+                <ul>
+                    <li><a href='/categorias/quesos'>QUESOS</a></li>
+                    <li><a href='/categorias/dulces'>DULCES</a></li>
+                    <li><a href='/categorias/frutos-secos'>FRUTOS SECOS Y SEMILLAS</a></li>
+                    <li><a href='/categorias/condimentos'>CONDIMENTOS</a></li>
+                    <li><a href='/categorias/almacen'>ALMACÉN</a></li>
+                    <li><a href='/categorias/panaderia'>PANADERÍA</a></li>
+                </ul>
             </div>
         </div>
 
@@ -31,12 +24,11 @@
         </div>
 
         <div class="iconos">
-
             <form id="busqueda">
                 <div class="search-box">
-                    <input class="search-input" id="buscador" autocomplete="off" type="text"
+                    <input id="buscador" autocomplete="off" type="text"
                         placeholder="Busca en la canasta...">
-                    <a href="#" class="search-btn">
+                    <a href="#" class="search-btn" id="lupaBtn">
                         <i class="fas fa-search"></i>
                     </a>
                 </div>
@@ -51,7 +43,7 @@
             </form>
 
             <div class="redes">
-                <a href="" class="brandico-mail aBrands">
+                <a href="mailto:artezzouy@gmail.com" class="brandico-mail aBrands">
                     <i class="fa-regular fa-envelope" style="color: #fffF; margin-top: 30%; font-size: 15px;"></i>
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=100093635806918"
@@ -72,8 +64,6 @@
     </div>
 
 </header>
-
-
 <!-------------------Carrito desplegable---------------->
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -94,7 +84,7 @@
 
             <button type="button" class="btn btn-dark" id="buyBtn" onclick="showContactform()">Comprar</button>
         </div>
-        <form id="contactForm" class="contactFormHidden">
+        <form id="contactForm" class="contactFormHidden" onsubmit="sendOrder(); return false;">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" class="form-control">
 
@@ -112,13 +102,11 @@
 
             <label for="termsReaded">Leyó los <a href="/terminos" class="tycRef">términos y condiciones?</a></label>
             <input type="checkbox" name="terminosycondiciones" id="termsReaded" required onchange="tycChecked()">
-            <button type="submit" id="sendOrderBtn" class="btn-danger" onclick="sendOrder(), clearCart(), !alert('Se envió su orden correctamente. Nos estaremos comunicando con usted a la brevedad.')" disabled>Enviar
+            <button type="submit" id="sendOrderBtn" class="btn-danger" disabled>Enviar
                 pedido</button>
         </form>
     </div>
 </div>
-
-
 <!--------------- Spinner ----------------->
 
 <div id="loaderContainer">
