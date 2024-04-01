@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 
 //Settings
 
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 27017);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname + '/views'));
