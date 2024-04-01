@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artezzo - Desde 1948</title>
+    <link rel="shortcut icon" href="/img/llogo.png">
+    <%- include('partials/head.html')%>
+        <link rel="stylesheet" href="/css/index.css">
+</head>
+<style>
+    #titleTerminos{
+    margin-top: 2%;
+    margin-left: 10%;
+    color: whitesmoke;
+}
+
+.subMenu h6{
+    font-size: 25px;
+    margin-left: 10%;
+    color: whitesmoke;
+}
+
+.subMenu li{
+    font-size: 20px;
+    margin-left: 13%;
+    margin-right: 30%;
+    color: whitesmoke;
+}
+</style>
+<body>
+    <%- include('partials/navigation.html')%>
+    <section class="contenedor" id="container" >
+      
+            <%- include('partials/barra.html')%>
+
+
+                <h1 id="titleTerminos">Puedes encontrar información aquí:</h1>
+                <hr style="padding: 1px; color: whitesmoke">
+
+                <ul class="subMenu">
+                    <h6>Terminos y Condiciones</h6>
+                    <li> Nuestro sitio web emplea la información con el fin de
+                        proporcionar el mejor servicio posible, en pedidos en caso que aplique, pueden existir mínimos o
+                        máximos en la cantidad donde la disponibilidad de los productos ofrecidos por <b>ARTEZZO</b> está sujeta
+                        al movimiento diario de stock de donde se prepara el pedido realizado.
+                        A su vez las cantidades de los cortes de los quesos y dulces son aproximadas, intentando siempre que sean 
+                        lo más exactos posibles para poder intentar brindarles a nuestros clientes una buena experiencia de compra. </li>
+                </ul>
+                
+                <ul class="subMenu">
+                    <h6>Devoluciones</h6>
+
+                    <li>Se aceptan cambios de la mercadría con fecha de vencimiento vencida o en mal estado siempre y cuando 
+                        se encuentre el total de la mercadería en el interior. Marcas como Conaprole se hacen cargo directamente
+                        llamandolos por teléfono al 2924717 en horarios de lunes a viernes de 9hs a 17hs. <b>ATENCIÓN!!</b> Las otras empresas
+                    o fábricas nos hacemos resposables directamente con ellos, siempre y cuando esté sujeto a su política empresarial.</li>
+                </ul>
+
+
+                <ul class="subMenu">
+                    <h6>Envíos de tus Pedidos</h6>
+
+                    <li>Los envíos estan programados por zonas dependiendo de los días de la semana (Por compras superiores
+                        a $700 el envío es gratiuto), en caso de que el pedido sea menor a este monto el costo será de $100 
+                        adicionales a la compra. En caso de que tú pedido no llegue el día solicitado, por favor comuniquese directo
+                    a nuestro teléfono <b>094552809</b>, que le intentaremos solucionar el problema.</li>
+                </ul>
+
+                <ul class="subMenu">
+
+                    <h6>Formas de pago</h6>
+                    <li>Las formas de pago que se pueden realizar es mediante efectivo, debito o transferencia bancaria.
+                        Por el momento no fiamos ni presatamos, por lo que No tenemos un crédito de la casa.
+                    </li>
+                </ul>
+
+                <div class="indexContent">
+                    <a href="https://api.whatsapp.com/send?phone=++59894552809text=Hola, Nececito más información!"
+                        class="float" target="_blank">
+                        <i class="fa fa-whatsapp my-float"></i>
+                    </a>
+
+                </div>
+
+                <%- include('partials/footer.html')%>
+    </section>
+    <script src="/scripts.js"></script>
+    <script src="/index.js"></script>
+    <script src="/buscador.js"></script>
+</body>
+
+</html>

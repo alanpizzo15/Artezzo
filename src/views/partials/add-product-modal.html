@@ -1,0 +1,78 @@
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title text-white" id="exampleModalLabel">Añadir nuevo producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <span id="productId"></span>
+      </div>
+      <div class="modal-body">
+        <form id="addProdForm">
+          <div class="mb-3">
+            <div id="" class="form-text">Nombre del producto.</div>
+            <input type="text" class="form-control" name="name" id="name" aria-describedby="" required>
+          </div>
+          <label class="form-check-label" for="prodDestacado">Destacado</label>
+          <input class="form-check-input" type="checkbox" id="prodDestacado" name="destacado">
+          <br>
+          <label class="form-check-label" for="porPorcion">Mostrar opciones por porción.</label>
+          <input class="form-check-input" type="checkbox" id="porPorcion" name="destacado">
+          <div class="mb-3">
+            <div id="" class="form-text">Categoría del producto.</div>
+            
+            <div class="selectBox d-flex flex-row flex-nowrap justify-content-between">
+              <div class="form-group col-4">
+                <label for="categoria" class="text-muted">Categoria</label>                                                 
+                    <select name="Categoria" id="categoriaAdd"  data-placeholder="- Seleccione Categoria -"
+                      class="form-control" onchange="addCategories('add')"
+                      value="" required>
+                          <option value=""></option>
+                          <option value="Quesos">Quesos</option>
+                          <option value="Frutos-secos">Frutos Secos y Semillas</option>
+                          <option value="Condimentos">Condimentos</option>
+                          <option value="Dulces">Dulces</option>
+                          <option value="Almacen">Almacén</option>
+                          <option value="Panaderia">Panadería</option>
+                    </select>
+              </div>
+              <div class="form-group col-4">
+                <label for="subcategoria" class="text-muted">Subcategoria</label>
+                  <select id="subCatListA" name="Subcategoria" data-placeholder="- Seleccione subcategoria -"
+                  class="form-control" value="">
+                    <option value=""></option>
+                  </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="d-flex flex-row flex-nowrap" style="justify-content: center;">
+            <div class="mb-3 col-6">
+              <div id="" class="form-text">Precio del producto.</div>
+              <input style="width: 80px;" type="number" class="form-control" name="price" id="price" aria-describedby="" required>
+            </div>
+       
+          </div>
+          <div class="porcionesBox">
+            <div id="" class="form-text">Porción 1.</div>
+            <input style="width: 85px;" type="number" class="form-control" name="porcion1" id="porcion1" aria-describedby="" placeholder="Grs.">
+            <div id="" class="form-text">Porción 2.</div>
+            <input style="width: 85px;" type="number" class="form-control" name="porcion2" id="porcion2" aria-describedby="" placeholder="Grs.">
+            <div id="" class="form-text">Porción 3.</div>
+            <input style="width: 85px;" type="number" class="form-control" name="porcion3" id="porcion3" aria-describedby="" placeholder="Grs.">
+          </div>
+          <div class="mb-3">
+            <div id="" class="form-text">Descripción del producto.</div>
+            <textarea class="form-control" name="description" id="desc" cols="30" rows="4"></textarea>
+          </div>
+          <div class="mb-3">
+            <div id="" class="form-text">Seleccione la imagen del producto.</div>
+            <input type="file" name="image" id="image" required>
+          </div>
+
+          <button id="addProductBtn" class="btn btn-primary" disabled>Añadir producto</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

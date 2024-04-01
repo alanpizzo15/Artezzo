@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artezzo - Desde 1948</title>
+    <link rel="shortcut icon" href="/img/llogo.png">
+    <%- include('partials/head.html')%>
+    <link rel="stylesheet" href="/css/index.css">
+    <!--SWIPER CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+</head>
+<body>
+    <section class="contenedor" id="container" >
+        <%- include('partials/NavCar.html')%>
+            <%- include('partials/barra.html')%>
+                <!--   Formulario para ingresar datos de envio -->
+                <div class="contenedor_pagos">
+                    <div class="formulario" id="modalBody">
+                        <img src="/img/tarjetas.png" width="100%">
+                        <h2>Detalles de facturación</h2>
+                        <input id="payer-name" style="width: 92%; margin-left: 4%; margin-bottom: 4px;"
+                        class="inputComprador form-control" type="text" required placeholder="Nombre y Apellido">
+                        <div class="d-flex flex-row flex-nowrap mb-1" style="justify-content: space-around;">
+                            <input id="payer-email" style="width: 44%; margin-left: 2%;"
+                            class="inputComprador form-control" type="email" required placeholder="Email">
+                             <input id="payer-phone" style="width: 44%; margin-right: 2%;" class="inputComprador form-control" type="tel"
+                                required placeholder="Teléfono">
+                        </div>
+                        <span class="mb-1 text-center span">Datos de envío</span>
+                        <div class="d-flex flex-row flex-wrap mb-1" style="justify-content: space-between;">
+                            <input id="payer-street" style="width: 92%; margin-right: 4%; margin-left: 4%;"
+                                class="inputComprador form-control mb-1" type="text" required placeholder="Dirección">
+                            <input id="payer-depto" style="width: 29%; margin-left: 4%;"
+                                class="inputComprador form-control mb-1" type="text" required
+                                placeholder="Departamento">
+                                <input id="payer-city" style="width: 29%;"
+                                class="inputComprador form-control mb-1" type="text" required placeholder="Localidad">
+                                <input id="payer-zipcode" style="width: 29%; margin-right: 4%;"
+                                class="inputComprador form-control mb-1" type="number" required placeholder="CP">
+                            <span class="mb-1 opcional">Opcional *</span>
+                            <input id="payer-floor" style="width: 22%; margin-top: 25px;" class="inputComprador form-control mb-1"
+                                type="text" placeholder="N° Piso">
+                            <input id="payer-apto" style="width: 22%; margin-right: 18%; margin-top: 25px;"
+                                class="inputComprador form-control mb-1" type="text" placeholder="Apto">
+                        </div>
+
+                        <div id="btnPayCallerBox" class="btnPayCallerBoxClass">
+                            <button onclick="aPagar()" class="btn btn-danger btn-block btnMP"
+                                style="width: 100%;">Pagar</button>
+                        </div>
+                    </div>
+
+                    <!-- Mostrar Producto -->
+                    <div class="container" id="contenedor_Productos_Pagos">
+                        <div class="d-flex flex-row flex-nowrap" id="showProd">
+                            <div class="col-2 d-flex" id="startProd">
+                                Producto</div>
+                            <div class="col-2 pr_c2" style="font-size: 17px;">Precio</div>
+                            <div class="col-2 pr_c3" style="font-size: 17px;">Cant</div>
+                            <div class="col-2 pr_c4" style="font-size: 17px;">Eliminar</div>
+                            <div class="col-2" style="font-size: 17px;">Subtotal</div>
+                        </div>
+                        <div class="itemsBox" id="itemsBox">
+
+                        </div>
+                        
+                        <div class="d-flex flex-row" style="justify-content: space-between;">
+                            <button onclick="vaciarCarrito()" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal" style="margin-right: 1%;">Vaciar Carrito</button>
+                           
+                            <span class="d-flex flex-row" style="justify-content: space-between; align-items: center;">
+                                <span id="totalBox" style="font-size: 20px; font-weight: bolder;"></span>
+                            </span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <%- include('partials/contact.html')%>
+                <%- include('partials/footer.html')%>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <script>
+        //boton de menu
+
+        document.querySelector('.first-button').addEventListener('click', function () {
+
+        document.querySelector('.animated-icon1').classList.toggle('open');
+        });
+
+        //Sppinner
+
+        window.addEventListener("load", function () {
+        document.getElementById("loader").classList.toggle("loader2")
+        })
+    </script>
+     <script src="/buscador.js"></script>
+</body>
+</html>

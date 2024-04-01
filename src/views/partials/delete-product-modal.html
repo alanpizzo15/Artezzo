@@ -1,0 +1,21 @@
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <span class="text-muted" id="idProdToDeleteBox" style="display: none;"></span>
+              <p class="form-text">Está seguro de eliminar este producto?</p>
+            </div>
+            <button id="deleteProdBtn">Eliminar producto</button>
+            <div id="deleteBtnBox" class="d-flex flex-row" style="justify-content: center;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>

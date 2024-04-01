@@ -1,0 +1,73 @@
+
+
+@media (max-width: 600px) {
+
+    .webC{
+        display: none;
+    }
+
+    .marginCarousel{
+        margin-top: 81px;
+    }
+
+    .swipper-slide {
+        width: 100%;
+    }
+
+
+    .carousel-caption {
+       
+        position: absolute;
+        right: 15%;
+        left: 15%;
+        padding-bottom: 1.25rem;
+        color: rgb(233, 233, 233);
+        text-align: center;
+    }
+
+    .carousel-caption .btn {
+        color: rgb(228, 228, 228);
+        background-color: whitesmoke;
+        border: none;
+    }
+
+    .car-cap-1 {
+        bottom: 2.5em;
+    }
+    
+    .car-cap-2 h5 {
+        font-size: 15px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: white;
+        border-radius: 1px;
+    }
+
+    .car-cap-2 p {
+        font-size: 14px;
+    }
+
+    .car-cap-3 h5 {
+        font-size: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: #004E98;
+        border-radius: 1px;
+    }
+
+    button .active {
+        background-color: #FF6700;
+    }
+
+ 
+
+ 
+}
+
+@media (min-width:601px) {
+
+    .movilC{
+        display: none;
+    }
+
+}
