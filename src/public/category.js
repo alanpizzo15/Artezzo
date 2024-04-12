@@ -136,6 +136,7 @@ async function showCategory(categoria) {
     let DulcesSubCat = ["Mermeladas", "Dulce", "ADU", "Repostería", "Postres"];
     let FrutosSecosSubCat = ["Furtos Secos", "Granos y Semillas"];
     let PanaderiaSubCat = ["Panes", "Grisines", "Masitas", "Galletas"];
+    let PacksSubCat = ["Quesos", "Picadas", "Frutos Secos"];
 
     if (categoria == "Quesos") {
         QuesosSubCat.forEach(element => {
@@ -157,10 +158,11 @@ async function showCategory(categoria) {
         PanaderiaSubCat.forEach(element => {
             subCatList.innerHTML += `<a href='#' onclick="showCategory('${element}')" class="aSubList"><li>${element}</li></a>`
         })
-    }
-
-
-};
+    } else if (categoria == "Packs") {
+    PacksSubCat.forEach(element => {
+        subCatList.innerHTML += `<a href='#' onclick="showCategory('${element}')" class="aSubList"><li>${element}</li></a>`
+    })
+}};
 
 window.onload = () => {
     const url = window.location.pathname;

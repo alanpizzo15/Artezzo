@@ -257,6 +257,7 @@ let DulcesSubCat = ["Mermeladas", "Dulce" , "ADU", "Repostería", "Postres"];
 let FrutosSecosSubCat = ["Frutos Secos", "Granos y Semillas"];
 let PanaderiaSubCat = ["Panes", "Grisines", "Masitas", "Galletas"];
 let CondimentosSubCat = ["-"];
+let PacksSubCat = ["Quesos", "Picadas", "Frutos Secos"];
 
 function addCategories(modo) {
     categoriaAdd = document.getElementById('categoriaAdd');
@@ -295,6 +296,11 @@ function addCategories(modo) {
             CondimentosSubCat.forEach(element => {
                 subcategoriaAdd.innerHTML += `<option value="${element}"> ${element}</option>`;
             })
+        } else if (categoriaAdd.value == "Packs") {
+            subcategoriaAdd.innerHTML = `<option value"-" class="scatoption">-</option>`;
+            PacksSubCat.forEach(element => {
+                subcategoriaAdd.innerHTML += `<option value="${element}"> ${element}</option>`;
+            })
         }
     } else {
         if (categoriaEdit.value == "Quesos") {
@@ -322,6 +328,16 @@ function addCategories(modo) {
             PanaderiaSubCat.forEach(element => {
                 subcategoriaEdit.innerHTML += `<option value="${element}"> ${element}</option>`;
             })
-        }
+        }else if (categoriaEdit.value == "Condimentos") {
+            subcategoriaEdit.innerHTML = `<option value"-" class="scatoption">-</option>`;
+            CondimentosSubCat.forEach(element => {
+                subcategoriaEdit.innerHTML += `<option value="${element}"> ${element}</option>`;
+            })
+        } else if (categoriaEdit.value == "Packs") {
+            subcategoriaEdit.innerHTML = `<option value"-" class="scatoption">-</option>`;
+            PacksSubCat.forEach(element => {
+                subcategoriaEdit.innerHTML += `<option value="${element}"> ${element}</option>`;
+            })
+        } 
     }
 };

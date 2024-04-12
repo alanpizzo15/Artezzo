@@ -63,6 +63,12 @@
         margin-top: -150px;
     }
 
+    .imgtoggler{
+        position: relative;
+        width: 70%;
+       
+    }
+
     /*      Menu Hamburguesa             */
     .toggler {
         /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
