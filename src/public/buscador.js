@@ -52,13 +52,13 @@ const logoBoxElmt = document.getElementById('logoContainer');
 const menuCheckboxElmt = document.getElementById('hamburguerCheck');
 const menuElmt = document.getElementById('hamburguerMenu');
 
-// buscadorElmt.classList.add('noDisplay');
+ buscadorElmt.classList.add('noDisplay');
 
 lupaElmt.addEventListener('click', () =>{
 
     console.log('click lupa');
-    // buscadorElmt.classList.toggle('noDisplay');
-    // buscadorElmt.classList.add('search-input');
+     buscadorElmt.classList.toggle('noDisplay');
+     buscadorElmt.classList.add('search-input');
 
     logoBoxElmt.classList.toggle('moveToLeft');
     menuCheckboxElmt.classList.toggle('moveToLeft');
@@ -66,7 +66,7 @@ lupaElmt.addEventListener('click', () =>{
 });
 
 contenedorElmt.addEventListener('click', ()=> {
-    // buscadorElmt.classList.add('noDisplay');
+     buscadorElmt.classList.add('noDisplay');
 
     logoBoxElmt.classList.remove('moveToLeft');
     menuCheckboxElmt.classList.remove('moveToLeft');
@@ -75,7 +75,6 @@ contenedorElmt.addEventListener('click', ()=> {
 
 scrollContainerElmt.addEventListener('click', ()=> {
     buscadorElmt.classList.add('noDisplay');
-
     logoBoxElmt.classList.toggle('moveToLeft');
     menuCheckboxElmt.classList.toggle('moveToLeft');
     menuElmt.classList.toggle('moveToLeft')
