@@ -25,11 +25,11 @@
               <div class="form-group col-4">
                 <label for="categoria" class="text-muted">Categoria</label>                                                 
                     <select name="Categoria" id="categoriaAdd"  data-placeholder="- Seleccione Categoria -"
-                      class="form-control" onchange="addCategories('add')"
+                      class="form-control" onchange="showSubCategories('add')"
                       value="" required>
                           <option value=""></option>
                           <option value="Quesos">Quesos</option>
-                          <option value="Frutos-secos">Frutos Secos y Semillas</option>
+                          <option value="Frutos">Frutos y Semillas</option>
                           <option value="Condimentos">Condimentos</option>
                           <option value="Dulces">Dulces</option>
                           <option value="Almacen">Almacén</option>
@@ -39,9 +39,9 @@
               </div>
               <div class="form-group col-4">
                 <label for="subcategoria" class="text-muted">Subcategoria</label>
-                  <select id="subCatListA" name="Subcategoria" data-placeholder="- Seleccione subcategoria -"
+                  <select id="subCategoriaAdd" name="Subcategoria" data-placeholder="- Seleccione subcategoria -"
                   class="form-control" value="">
-                    <option value=""></option>
+                   
                   </select>
               </div>
             </div>

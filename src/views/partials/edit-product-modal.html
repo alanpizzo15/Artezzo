@@ -26,10 +26,10 @@
                         <div class="selectBox d-flex flex-row flex-nowrap justify-content-between">
                             <div class="form-group col-4">
                                 <label for="Categoria" class="text-muted">Categoria</label>
-                                <select name="Categoria" id="categoriaEdit" data-placeholder="- Seleccione Categoria -" class="form-control" onchange="addCategories('edit')" value="">
+                                <select name="Categoria" id="categoriaEdit" data-placeholder="- Seleccione Categoria -" class="form-control" onchange="showSubCategories('edit')" value="">
                                     <option value=""></option>
                                     <option value="Quesos">Quesos</option>
-                                    <option value="Frutos Secos">Frutos Secos</option>
+                                    <option value="Frutos">Frutos y Semillas</option>
                                     <option value="Condimentos">Condimentos</option>
                                     <option value="Dulces">Dulces</option>
                                     <option value="Almacen">Almacen</option>
@@ -39,8 +39,8 @@
                             </div>
                             <div class="form-group col-4">
                                 <label for="Subcategoria" class="text-muted">Subcategoria</label>
-                                <select id="subCatListE" name="Subcategoria" data-placeholder="- Seleccione subcategoria -" class="form-control" value="">
-                    <option value=""></option>
+                                <select id="subCategoriaEdit" name="Subcategoria" data-placeholder="- Seleccione subcategoria -" class="form-control" value="">
+                    
                   </select>
                             </div>
                         </div>

@@ -2,7 +2,6 @@
 async function showProducts() {
     
     const products = await (await fetch('/api/getproducts')).json();
-    console.log(products);
     let productsHTML = "";
 
     document.getElementById('btnCleanSearch').setAttribute('disabled', true);
@@ -137,7 +136,7 @@ function prodToEdit(idproduct) {
         document.getElementById('editDestacado').checked    = data.destacado;
         document.getElementById('newname').value            = data.name;
         document.getElementById('categoriaEdit').value      = data.category;
-        document.getElementById('subCatListE').value        = data.subcategory;
+        document.getElementById('subCategoriaEdit').value        = data.subcategory;
         document.getElementById('newdesc').value            = data.description;
         document.getElementById('newprice').value           = data.price;
         document.getElementById('nostock').checked          = data.nostock;
@@ -181,7 +180,7 @@ addProdBtn.addEventListener('click', ()=> {
     let destacado = document.getElementById('prodDestacado').checked;
     let name = document.getElementById('name').value;
     let category = document.getElementById('categoriaAdd').value;
-    let subcategory = document.getElementById('subCatListA').value;
+    let subcategory = limpiarString(document.getElementById('subCategoriaAdd').value);
     let desc = document.getElementById('desc').value;
     let image = document.getElementById("image");
     let price = document.getElementById('price').value;
@@ -218,7 +217,7 @@ document.getElementById('editProductBtn').addEventListener('click', (e) => {
     let destacado = document.getElementById('editDestacado').checked;
     let name = document.getElementById('newname').value;
     let category = document.getElementById('categoriaEdit').value;
-    let subcategory = document.getElementById('subCatListE').value;
+    let subcategory = limpiarString(document.getElementById('subCategoriaEdit').value);
     let desc = document.getElementById('newdesc').value;
     let image = document.getElementById('newimage');
     let price = document.getElementById('newprice').value;
@@ -253,17 +252,17 @@ document.getElementById('editProductBtn').addEventListener('click', (e) => {
 
 let QuesosSubCat = ["Colonia", "Duros", "Magros", "Blandos", "Untables", "Cabra", "Sin Sal"];
 let AlmacenSubCat = ["Lácteos", "Cereales", "Aceites", "Latas", "Almacén"];
-let DulcesSubCat = ["Mermeladas", "Dulce" , "ADU", "Repostería", "Postres"];
-let FrutosSecosSubCat = ["Frutos Secos", "Granos y Semillas"];
+let DulcesSubCat = ["Mermeladas", "Dulce", "Dulce de Leche", "ADU", "Repostería"];
+let FrutosSubCat = ["Frutos Secos", "Aceitunas", "Granos y Semillas"];
 let PanaderiaSubCat = ["Panes", "Grisines", "Masitas", "Galletas"];
 let CondimentosSubCat = ["-"];
-let PacksSubCat = ["Quesos", "Picadas", "Frutos Secos"];
+let PacksSubCat = ["Box", "Picadas", "Dieta"];
 
-function addCategories(modo) {
+function showSubCategories(modo) {
     categoriaAdd = document.getElementById('categoriaAdd');
     categoriaEdit = document.getElementById('categoriaEdit');
-    subcategoriaAdd = document.getElementById('subCatListA');
-    subcategoriaEdit = document.getElementById('subCatListE');
+    subcategoriaAdd = document.getElementById('subCategoriaAdd');
+    subcategoriaEdit = document.getElementById('subCategoriaEdit');
 
     if(modo === "add"){
         if (categoriaAdd.value == "Quesos") {
@@ -281,9 +280,9 @@ function addCategories(modo) {
             DulcesSubCat.forEach(element => {
                 subcategoriaAdd.innerHTML += `<option value="${element}"> ${element}</option>`;
             })
-        } else if (categoriaAdd.value == "Frutos-secos") {
+        } else if (categoriaAdd.value == "Frutos") {
             subcategoriaAdd.innerHTML = `<option value"-" class="scatoption">-</option>`;
-            FrutosSecosSubCat.forEach(element => {
+            FrutosSubCat.forEach(element => {
                 subcategoriaAdd.innerHTML += `<option value="${element}"> ${element}</option>`;
             })
         } else if (categoriaAdd.value == "Panaderia") {
@@ -318,9 +317,9 @@ function addCategories(modo) {
             DulcesSubCat.forEach(element => {
                 subcategoriaEdit.innerHTML += `<option value="${element}"> ${element}</option>`;
             })
-        } else if (categoriaEdit.value == "Frutos-secos") {
+        } else if (categoriaEdit.value == "Frutos") {
             subcategoriaEdit.innerHTML = `<option value"-" class="scatoption">-</option>`;
-            FrutosSecosSubCat.forEach(element => {
+            FrutosSubCat.forEach(element => {
                 subcategoriaEdit.innerHTML += `<option value="${element}"> ${element}</option>`;
             })
         } else if (categoriaEdit.value == "Panaderia") {
@@ -340,4 +339,15 @@ function addCategories(modo) {
             })
         } 
     }
+};
+
+function limpiarString(string){
+    string = string.toLowerCase();
+    string = string.normalize('NFD')
+     .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,"$1$2")
+     .normalize();
+
+    string = string.replace(/ /g, "");
+
+    return string;
 };

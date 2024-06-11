@@ -1,12 +1,12 @@
 const productsBox = document.getElementById('prodBox');
 
 async function showCategory(categoria) {
-
+    
     const products = await (await fetch('/api/getproducts')).json();
     let productsHTML = "";
-
-    let productsFiltered = products.filter((prod) => prod.category === categoria || prod.subcategory === categoria);
-
+    
+    let productsFiltered = products.filter((prod) => limpiarString(prod.category) === limpiarString(categoria) || limpiarString(prod.subcategory) === limpiarString(categoria));
+   
     productsFiltered.forEach(element => {
         if (element.offerprice !== undefined && element.offerprice !== null) {
             if(element.porciones === true){
@@ -133,10 +133,10 @@ async function showCategory(categoria) {
 
     let QuesosSubCat = [ "Colonia", "Duros", "Magros", "Blandos", "Untables", "Cabra", "Sin Sal"];
     let AlmacenSubCat = ["Productos Naturales", "Lácteos", "Cereales", "Aceites", "Latas", "Almacén"];
-    let DulcesSubCat = ["Mermeladas", "Dulce", "ADU", "Repostería", "Postres"];
-    let FrutosSecosSubCat = ["Furtos Secos", "Granos y Semillas"];
+    let DulcesSubCat = ["Mermeladas", "Dulce", "Dulce de Leche", "ADU", "Repostería"];
+    let FrutosSubCat = ["Frutos Secos", "Aceitunas", "Granos y Semillas"];
     let PanaderiaSubCat = ["Panes", "Grisines", "Masitas", "Galletas"];
-    let PacksSubCat = ["Quesos", "Picadas", "Frutos Secos"];
+    let PacksSubCat = ["Box", "Picadas", "Dieta"];
 
     if (categoria == "Quesos") {
         QuesosSubCat.forEach(element => {
@@ -150,8 +150,8 @@ async function showCategory(categoria) {
         DulcesSubCat.forEach(element => {
             subCatList.innerHTML += `<a href='#' onclick="showCategory('${element}')" class="aSubList"><li>${element}</li></a>`
         })
-    } else if (categoria == "Frutos-secos") {
-        FrutosSecosSubCat.forEach(element => {
+    } else if (categoria == "frutos") {
+        FrutosSubCat.forEach(element => {
             subCatList.innerHTML += `<a href='#' onclick="showCategory('${element}')" class="aSubList"><li>${element}</li></a>`
         })
     } else if (categoria == "Panaderia") {
@@ -168,18 +168,14 @@ window.onload = () => {
     const url = window.location.pathname;
     let category = url.substring(12, url.length);
 
-    function letrasMayus(str) {
-        str = str.charAt(0).toUpperCase() + str.slice(1);
-        return str;
-    };
-    category = letrasMayus(category);
-
+     if (category !== 'frutos') {
+         category = category.charAt(0).toUpperCase() + category.slice(1);
+     };
+    
     showCategory(category);
 
-    if(category === 'Frutos-secos'){
-        var guionAt = (category.indexOf('-',0)+1);
-        var str = category.substring(0, guionAt) + "S" + category.substring(guionAt+1)
-        category = str.substring(0, 6) + " S" + category.substring(8, 12) + " y Semillas";
+    if(category === 'frutos'){
+    category = "Frutos y Semillas";
     };
     if(category === 'Panaderia'){
         category = 'Panadería'
@@ -187,6 +183,16 @@ window.onload = () => {
     if(category === 'Almacen'){
         category = 'Almacén'
     };
-    document.getElementById('categoriaBox').innerHTML = letrasMayus(category);
+    document.getElementById('categoriaBox').innerHTML = category;
 };
 
+function limpiarString(string){
+    string = string.toLowerCase();
+    string = string.normalize('NFD')
+     .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,"$1$2")
+     .normalize();
+
+    string = string.replace(/ /g, "");
+
+    return string;
+};
